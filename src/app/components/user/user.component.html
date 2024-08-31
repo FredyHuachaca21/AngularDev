@@ -1,0 +1,25 @@
+
+<section>
+  @if (estaAutenticado) {
+    <p>Bienvenido: {{usuario.toUpperCase()}}</p>
+    <img
+    (click)="mostrarAlerta()"
+    src="https://github.com/Fredyhuachaca21.png" alt="photo">
+
+  } @else {
+    <p>Por favor inicie sesión</p>
+    <button (click)="estaAutenticado = true">Iniciar Sesión</button>
+  }
+
+  <app-games
+  [username]="usuario"
+  (agregarJuegoFavoritoEvent)="obtenerJuegoFavorito($event)"
+  ></app-games>
+
+  @if (juegoFavorito != '') {
+    <p class="juegoFav">❤️ Juego favorito de:  {{usuario}}, es:
+      <span class="juego">{{juegoFavorito}}</span>
+    </p>
+  }
+
+</section>

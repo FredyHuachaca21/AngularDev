@@ -1,0 +1,10 @@
+<ul>
+
+  <p>Los juegos favoritos de {{username}}</p>
+
+  @for (game of games; track game.id) {
+    <li
+    (click)="agregarJuegoFavorito(game.name)"
+    >{{game.name}}</li>
+  }
+</ul>

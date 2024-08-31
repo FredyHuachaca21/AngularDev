@@ -1,0 +1,9 @@
+/* agregar efecto al cursor de li y cambiar de color al hacer click */
+
+li {
+  cursor: pointer;
+}
+
+li:hover {
+  color: rgb(82, 139, 199);
+}
